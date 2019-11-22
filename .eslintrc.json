@@ -1,0 +1,32 @@
+{
+  "parser": "babel-eslint",
+  "extends": "react",
+  "rules": {
+    "one-var": 0,
+    "one-var-declaration-per-line": 0,
+    "new-cap": 0,
+    "consistent-return": 0,
+    "no-param-reassign": 0,
+    "no-console": 1,
+    "space-before-function-paren": "off",
+    "indent": [ 1, 2 ],
+    "max-len": "off",
+    "comma-dangle": 0,
+    "object-curly-newline": "off",
+    "curly": ["error", "multi-line"],
+    "no-unused-expressions": "off",
+    "import/no-dynamic-require": "off",
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "eol-last": 1,
+    "arrow-parens": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
