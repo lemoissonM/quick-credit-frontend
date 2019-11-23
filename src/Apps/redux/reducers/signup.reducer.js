@@ -7,21 +7,21 @@ const initialState = {
 
 const loginreducer = (state = initialState, action) => {
   switch (action.type) {
-  case constants.LOGIN_SUCCESSFUL:
+  case constants.SIGNUP_SUCCESSFUL:
     return Object.assign({}, state, {
       ...state,
       user: action.user,
       pending: false,
       error: null
     });
-  case constants.LOGIN_ERROR:
+  case constants.SIGNUP_ERROR:
     return Object.assign({}, state, {
       ...state,
       pending: false,
       error: action.error,
       user: null
     });
-  case constants.LOGIN_PENDING:
+  case constants.SIGNUP_PENDING:
     return Object.assign({}, state, {
       ...state,
       pending: true,

@@ -8,7 +8,7 @@ const Tab = ({ id, value, className, type, handleClick }) => (
     type={type}
     onClick={handleClick}
     value = {value}
-  ><b>{value}</b></p>
+  ><b id={id}>{value}</b></p>
 );
 Tab.propTypes = {
   value: PropTypes.string,

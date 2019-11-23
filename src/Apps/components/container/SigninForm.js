@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { login } from "../../redux/actions/login.action";
 import Input from '../presentationnal/Input.jsx';
-import Alert from '../presentationnal/Alert.jsx';
 import PropTypes from "prop-types";
 import '../../../../public/style/style.css';
 
@@ -46,16 +45,17 @@ class loginForm extends Component {
   }
   render() {
     //const { email, password } = this.state;
-    //const { userData, error } = this.props;
+    const { user, error, pending } = this.props;
     return (
 
       <form onSubmit={this.handleSubmit} action="dashboard.html" className="form-content row" id="connection">
-        <Alert className="alert alert-primary" role="alert" value={this.setResponse()} handleChange={this.handleChange}/>
         <Input type="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" className="col-10" placeholder="Your email address" id="email" handleChange={this.handleChange} required/>
         <Input id="password" type="password" className="col-10" placeholder="Your password" handleChange={this.handleChange} required/>
         <a href="#" className="forgot col-12">Forgot password ?</a>
         <Input value="Sign in" type="submit" className="submit "name="button" id="loginBtn" />
-        <p className="swtch_create col-12"><b>-- Or --</b></p>
+        {pending && <p className="swtch_create col-12"><b>Signing you in...</b></p>}
+        {user && <p className="swtch_create col-12"><b>Signed in successfuly</b></p>}
+        {error && <p className="swtch_create col-12"><b>{error.message}</b></p>}
       </form>
     );
   }
